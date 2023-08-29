@@ -16,6 +16,8 @@ public class TestBase {
 	static File folder; 
 
 	public TestBase() throws IOException {
+		
+		// reading for configuration from the config file
 		prop = new Properties();
 		FileInputStream fis = new FileInputStream(
 				System.getProperty("user.dir") + "/src/main/java/resources/config.properties");

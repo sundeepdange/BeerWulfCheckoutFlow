@@ -13,8 +13,26 @@ import pageObjects.HomePage;
 import pageObjects.LocalePage;
 import pageObjects.ProductDetailsPage;
 
-public class checkoutFlow extends TestBase {
 
+
+/*This is a test script for checkout flow on the beerwulf website 
+ * Author: Sundeep Dange
+ *  
+ *  Steps: 
+ *1. Open the https://www.beerwulf.com/ in Chrome 
+ *2. Select locale/region 
+ *3. Handle the age consent and cookie preference popups 
+ *4. Search for desired product 
+ *5. Select product and go to product details page
+ *6. Add product to the cart and goto cart
+ *7. Goto checkout page and continue as guest checkout 
+ *8. Enter user details and select payment options [Credit card is selected by default]
+ *9. Order review page is displayed, check the age consent checkbox and select Next to go to payments page
+ *10. Payment page is displayed
+ *
+ */
+public class checkoutFlow extends TestBase {
+	
 	HomePage homePage;
 	LocalePage localePage;
 	ProductDetailsPage productDetailsPage;
@@ -41,7 +59,7 @@ public class checkoutFlow extends TestBase {
 		cartPage = productDetailsPage.addSelectedProductToCart();
 		checkoutPage = cartPage.gotoCheckout();
 		checkoutPage.continueToCheckoutAsGuest();
-		checkoutPage.enterPersonalDetails();
+		checkoutPage.enterPersonalDetailsAndCompleteCheckout();
 	}
 
 	@AfterMethod

@@ -68,7 +68,7 @@ public class CheckoutPage extends TestBase {
 				.until(ExpectedConditions.elementToBeClickable(continueToCheckoutButton)).click();
 	}
 
-	public void enterPersonalDetails() throws IOException {
+	public void enterPersonalDetailsAndCompleteCheckout() throws IOException {
 		new WebDriverWait(driver, Duration.ofSeconds(5))
 				.until(ExpectedConditions.elementToBeClickable(enterEmailTextBox)).click();
 		enterEmailTextBox.sendKeys("testuser@test.com");
